@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane onMouseEntered="#showButtons" onMouseExited="#hideButtons" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="3.0" layoutY="2.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0" />
+      <HBox fx:id="buttonsHBox" opacity="0.0" prefHeight="25.0" prefWidth="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ImageView fx:id="button1" fitHeight="26.0" fitWidth="24.0" onMouseEntered="#btn1Show" onMouseExited="#btn1Hide" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="button2" fitHeight="26.0" fitWidth="24.0" onMouseEntered="#btn2Show" onMouseExited="#btn2Hide" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+   </padding>
+</AnchorPane>
