@@ -8,7 +8,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -16,11 +15,12 @@ import java.io.IOException;
 
 public class ActionableTextField extends AnchorPane {
 
-    private ActionableTextFieldController controller;
+    public ActionableTextFieldController controller;
     private SimpleBooleanProperty showButton1 = new SimpleBooleanProperty(true);
     private SimpleBooleanProperty showButton2 = new SimpleBooleanProperty(true);
     private ObjectProperty<Image> button1Image = new SimpleObjectProperty<>();
     private ObjectProperty<Image> button2Image = new SimpleObjectProperty<>();
+
 
     public ActionableTextField() {
         super();
@@ -34,6 +34,7 @@ public class ActionableTextField extends AnchorPane {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         controller.getButton1().visibleProperty().bind(showButton1);
         controller.getButton2().visibleProperty().bind(showButton2);
         controller.getButton1().imageProperty().bind(button1Image);
@@ -48,13 +49,6 @@ public class ActionableTextField extends AnchorPane {
         controller.getButton2().setVisible(show);
     }
 
-    public void addButton1Image (ImageView img){
-
-    }
-
-    public void addButton2Image (ImageView img){
-
-    }
 
     public void addButton1Action(ChangeListener<EventHandler<? super MouseEvent>> listener){
         controller.getButton1().onMouseClickedProperty().addListener(listener);
@@ -112,4 +106,12 @@ public class ActionableTextField extends AnchorPane {
     public void setButton2Image(Image button2Image) {
         this.button2Image.set(button2Image);
     }
+
+    /**
+     * Put this in initialize method to hide buttons. Otherwise they will be visible at all times.
+     */
+    public void hideButtons(){
+        controller.getButtonsHBox().setOpacity(0.0);
+    }
+
 }

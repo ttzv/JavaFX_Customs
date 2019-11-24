@@ -29,6 +29,7 @@ public class ActionableTextFieldController {
 
     @FXML
     public void initialize() {
+
     }
 
     @FXML
@@ -75,5 +76,9 @@ public class ActionableTextFieldController {
 
     public ImageView getButton2() {
         return button2;
+    }
+
+    public HBox getButtonsHBox() {
+        return buttonsHBox;
     }
 }

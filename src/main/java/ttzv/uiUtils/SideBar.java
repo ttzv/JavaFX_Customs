@@ -4,6 +4,8 @@ import javafx.animation.Animation;
 import javafx.animation.Transition;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,9 +17,9 @@ import javafx.util.Duration;
 public class SideBar extends AnchorPane {
 
 
-    private boolean expanded = false;
+    private boolean expanded;
     private SimpleDoubleProperty animationSpeed = new SimpleDoubleProperty(250.0);
-    private SimpleDoubleProperty targetWidth = new SimpleDoubleProperty(250.0);
+    private SimpleDoubleProperty targetWidth = new SimpleDoubleProperty();
     private boolean animateNodes = false;
     private Node toggler;
 
@@ -25,6 +27,7 @@ public class SideBar extends AnchorPane {
         super();
         this.expanded = false;
         childrenVisible(false);
+        targetWidth.addListener((observableValue, number, t1) -> SideBar.this.setPrefWidth(t1.doubleValue()));
     }
 
     public void childrenVisible(boolean visible){
