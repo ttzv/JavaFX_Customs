@@ -150,4 +150,17 @@ public class SideBar extends AnchorPane {
         }
 
     }
+
+    /**
+     * Set all anchors for Node inside this pane.
+     * This will work only for first node added to this pane so it is recommended to wrap multiple nodes in one parent when using this method
+     * @param val anchor offset value for each side
+     */
+    public void applyAnchors(double val){
+        Node childNode = this.getChildren().get(0);
+        AnchorPane.setTopAnchor(childNode,val);
+        AnchorPane.setBottomAnchor(childNode,val);
+        AnchorPane.setLeftAnchor(childNode,val);
+        AnchorPane.setRightAnchor(childNode,val);
+    }
 }
