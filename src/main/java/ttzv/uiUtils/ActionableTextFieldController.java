@@ -3,6 +3,7 @@ package ttzv.uiUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -15,6 +16,9 @@ public class ActionableTextFieldController {
     private final double invisible = 0.0;
     private final double semivisible = 0.4;
     private final double visible = 1.0;
+
+    @FXML
+    TextField textField;
 
     @FXML
     private HBox buttonsHBox;
@@ -80,5 +84,9 @@ public class ActionableTextFieldController {
 
     public HBox getButtonsHBox() {
         return buttonsHBox;
+    }
+
+    public TextField getTextField() {
+        return textField;
     }
 }

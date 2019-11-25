@@ -9,7 +9,7 @@
 
 <AnchorPane onMouseEntered="#showButtons" onMouseExited="#hideButtons" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField layoutX="3.0" layoutY="2.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0" />
+      <TextField fx:id="textField" layoutX="3.0" layoutY="2.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0" />
       <HBox fx:id="buttonsHBox" prefHeight="25.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fx:id="button1" fitHeight="26.0" fitWidth="24.0" onMouseEntered="#btn1Show" onMouseExited="#btn1Hide" pickOnBounds="true" preserveRatio="true">

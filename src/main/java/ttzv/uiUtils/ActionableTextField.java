@@ -114,4 +114,12 @@ public class ActionableTextField extends AnchorPane {
         controller.getButtonsHBox().setOpacity(0.0);
     }
 
+    public void setText(String s){
+        this.controller.getTextField().setText(s);
+    }
+
+    public String getText(){
+        return this.controller.getTextField().getText();
+    }
+
 }
