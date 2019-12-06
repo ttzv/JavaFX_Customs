@@ -12,12 +12,15 @@
       <TextField fx:id="textField" layoutX="3.0" layoutY="2.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0" />
       <HBox fx:id="buttonsHBox" prefHeight="25.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fx:id="button1" fitHeight="26.0" fitWidth="24.0" onMouseEntered="#btn1Show" onMouseExited="#btn1Hide" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="button1" fitHeight="24.0" fitWidth="24.0" onMouseEntered="#btn1Show" onMouseExited="#btn1Hide" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
             </ImageView>
-            <ImageView fx:id="button2" fitHeight="26.0" fitWidth="24.0" onMouseEntered="#btn2Show" onMouseExited="#btn2Hide" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="button2" fitHeight="24.0" fitWidth="24.0" onMouseEntered="#btn2Show" onMouseExited="#btn2Hide" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -26,6 +29,6 @@
       </HBox>
    </children>
    <padding>
-      <Insets bottom="2.0" left="2.0" right="2.0" top="3.0" />
+      <Insets bottom="3.0" left="2.0" right="2.0" top="3.0" />
    </padding>
 </AnchorPane>

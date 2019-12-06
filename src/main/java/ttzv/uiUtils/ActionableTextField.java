@@ -3,11 +3,12 @@ package ttzv.uiUtils;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -20,7 +21,6 @@ public class ActionableTextField extends AnchorPane {
     private SimpleBooleanProperty showButton2 = new SimpleBooleanProperty(true);
     private ObjectProperty<Image> button1Image = new SimpleObjectProperty<>();
     private ObjectProperty<Image> button2Image = new SimpleObjectProperty<>();
-
 
     public ActionableTextField() {
         super();
@@ -39,6 +39,29 @@ public class ActionableTextField extends AnchorPane {
         controller.getButton2().visibleProperty().bind(showButton2);
         controller.getButton1().imageProperty().bind(button1Image);
         controller.getButton2().imageProperty().bind(button2Image);
+        //this below does not work, I wonder why..
+        //textC.bindBidirectional(controller.getTextField().textProperty());
+    }
+
+    /*public static EventHandler<MouseEvent> COPY_ACTION(String text) {
+        return mouseEvent -> {
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent content = new ClipboardContent();
+            content.putString(text);
+            System.out.println("Clipboarded: " + text);
+            clipboard.setContent(content);
+        };
+    }*/
+
+    //cant make this static because bind does not work so for now i have to use ugly solution
+    public EventHandler<MouseEvent> COPY_ACTION() {
+        return mouseEvent -> {
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent content = new ClipboardContent();
+            content.putString(getText());
+            System.out.println("Clipboarded: " + getText());
+            clipboard.setContent(content);
+        };
     }
 
     public void showButton1(boolean show){
@@ -50,12 +73,12 @@ public class ActionableTextField extends AnchorPane {
     }
 
 
-    public void addButton1Action(ChangeListener<EventHandler<? super MouseEvent>> listener){
-        controller.getButton1().onMouseClickedProperty().addListener(listener);
+    public void addButton1Action(EventHandler<MouseEvent> event){
+        controller.getButton1().setOnMouseClicked(event);
     }
 
-    public void addButton2Action(ChangeListener<EventHandler<? super MouseEvent>> listener){
-        controller.getButton2().onMouseClickedProperty().addListener(listener);
+    public void addButton2Action(EventHandler<MouseEvent> event){
+        controller.getButton2().setOnMouseClicked(event);
     }
 
 
