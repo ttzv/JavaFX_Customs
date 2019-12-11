@@ -59,7 +59,6 @@ public class ActionableTextField extends AnchorPane {
             Clipboard clipboard = Clipboard.getSystemClipboard();
             ClipboardContent content = new ClipboardContent();
             content.putString(getText());
-            System.out.println("Clipboarded: " + getText());
             clipboard.setContent(content);
         };
     }
