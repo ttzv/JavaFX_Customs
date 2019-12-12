@@ -12,14 +12,6 @@ import java.io.IOException;
 
 public class CommandNode extends AnchorPane {
 
-    String content;
-    Button btnCopy;
-    Button btnUpdate;
-    Button btnDelete;
-    String title;
-    TextField titleField;
-    TextField tagsField;
-
     public CommandNodeController controller;
 
     public CommandNode() {
@@ -31,6 +23,10 @@ public class CommandNode extends AnchorPane {
             fxmlLoader.setController(controller);
             Node n = fxmlLoader.load();
             this.getChildren().add(n);
+            AnchorPane.setRightAnchor(n, 0.);
+            AnchorPane.setLeftAnchor(n, 0.);
+            AnchorPane.setTopAnchor(n, 0.);
+            AnchorPane.setBottomAnchor(n, 0.);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,7 +38,7 @@ public class CommandNode extends AnchorPane {
             clipboard.setContent(content);
         });
 
-        this.controller.getTitle().textProperty().bind(this.controller.getTitle().textProperty());
+        this.controller.getTitle().textProperty().bind(this.controller.getTitleField().textProperty());
     }
 
     public Button getBtnCopy() {

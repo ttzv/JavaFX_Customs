@@ -41,16 +41,6 @@ public class ActionableTextField extends AnchorPane {
         controller.getButton2().imageProperty().bind(button2Image);
     }
 
-    /*public static EventHandler<MouseEvent> COPY_ACTION(String text) {
-        return mouseEvent -> {
-            Clipboard clipboard = Clipboard.getSystemClipboard();
-            ClipboardContent content = new ClipboardContent();
-            content.putString(text);
-            System.out.println("Clipboarded: " + text);
-            clipboard.setContent(content);
-        };
-    }*/
-
     //cant make this static because bind does not work so for now i have to use ugly solution
     public EventHandler<MouseEvent> COPY_ACTION() {
         return mouseEvent -> {

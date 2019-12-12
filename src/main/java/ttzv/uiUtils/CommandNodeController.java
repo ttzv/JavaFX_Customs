@@ -30,6 +30,9 @@ public class CommandNodeController {
     @FXML
     private TextField tagsField;
 
+    @FXML
+    public void initialize(){}
+
     public TextArea getContent() {
         return content;
     }
