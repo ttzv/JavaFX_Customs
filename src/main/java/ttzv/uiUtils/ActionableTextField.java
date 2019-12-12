@@ -39,8 +39,6 @@ public class ActionableTextField extends AnchorPane {
         controller.getButton2().visibleProperty().bind(showButton2);
         controller.getButton1().imageProperty().bind(button1Image);
         controller.getButton2().imageProperty().bind(button2Image);
-        //this below does not work, I wonder why..
-        //textC.bindBidirectional(controller.getTextField().textProperty());
     }
 
     /*public static EventHandler<MouseEvent> COPY_ACTION(String text) {
