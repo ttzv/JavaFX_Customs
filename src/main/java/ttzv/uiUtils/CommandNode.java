@@ -13,6 +13,7 @@ import java.io.IOException;
 public class CommandNode extends AnchorPane {
 
     public CommandNodeController controller;
+    private String uid;
 
     public CommandNode() {
         super();
@@ -83,5 +84,13 @@ public class CommandNode extends AnchorPane {
 
     public void setTagsField(String text) {
         this.controller.getTagsField().setText(text);
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }
